@@ -8,7 +8,37 @@
 			"label": "build",
 			"type": "shell",
 			"command": "g++",
-			"args": ["-o", "${fileBasenameNoExtension}", "${fileBasename}"],
+			"args": ["-ggdb", "-o", "${fileBasenameNoExtension}", "${fileBasename}",],
+			"presentation": {
+				"echo": false,
+				"reveal": "always",
+				"focus": false,
+				"panel": "shared",
+				"showReuseMessage": false,
+				"clear": true
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": {
+				"owner": "cpp",
+				"fileLocation": "relative",
+				"pattern": {
+					"regexp": "^(.):(\\d+):(\\d+):\\s+(warning|error):\\s+(.)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
+			}
+		},
+		{
+			"label": "release",
+			"type": "shell",
+			"command": "g++",
+			"args": ["-O2", "-DNDEBUG", "-o", "${fileBasenameNoExtension}", "${fileBasename}"],
 			"presentation": {
 				"echo": false,
 				"reveal": "always",
