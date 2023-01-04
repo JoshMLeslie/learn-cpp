@@ -8,7 +8,14 @@
 			"label": "build",
 			"type": "shell",
 			"command": "g++",
-			"args": ["-ggdb", "-pedantic-errors", "-o", "${fileBasenameNoExtension}", "${fileBasename}",],
+			"args": [
+				"-ggdb",
+				"-Werror",
+				"-pedantic-errors",
+				"-o",
+				"${fileBasenameNoExtension}",
+				"${fileBasename}"
+			],
 			"presentation": {
 				"echo": false,
 				"reveal": "always",
